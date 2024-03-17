@@ -78,7 +78,7 @@ const JobSearch = () => {
             <ScreenHeaderBtn
               iconUrl={icons.left}
               dimension="60%"
-              handlePress={() => router.back()}
+              handlePress={() => router.push("/")}
             />
           ),
           headerTitle: "",
