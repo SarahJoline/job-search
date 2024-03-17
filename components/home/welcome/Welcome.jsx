@@ -6,7 +6,7 @@ import styles from './welcome.style';
 
 const jobTypes = ["Full-Time", "Part-Time", "Contract"];
 
-const Welcome = () => {
+const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
   const router = useRouter();
   const [activeJobType, setActiveJobType] = useState();
   return (
@@ -18,10 +18,11 @@ const Welcome = () => {
 
     <View style={styles.searchContainer}>
          <View style={styles.searchWrapper}>
-      <TextInput style={styles.searchInput} value="" onChange={() => {}}
-      placeholder="search" />
+      <TextInput style={styles.searchInput}  value={searchTerm}
+            onChangeText={(text) => setSearchTerm(text)}
+            placeholder='What are you looking for?' />
     </View>
-    <Pressable style={styles.searchBtn}><Image source={icons.search} resizeMode="contain" style={styles.searchBtnImage}/></Pressable>
+    <Pressable onPress={handleClick} style={styles.searchBtn}><Image source={icons.search} resizeMode="contain" style={styles.searchBtnImage}/></Pressable>
     </View>
     <View style={styles.tabsContainer}>
       <FlatList data={jobTypes} renderItem={({item}) =>(<Pressable style={styles.tab(activeJobType, item)} onPress={()=> {setActiveJobType(item)
