@@ -8,6 +8,22 @@
       "expo-router"
     ],
     "name": "to-do",
-    "slug": "to-do"
+    "slug": "to-do",
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "92475ff2-1663-4151-bdd6-893166c0051e"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/92475ff2-1663-4151-bdd6-893166c0051e"
+    },
+    "android": {},
+    "ios": {}
   }
 }
