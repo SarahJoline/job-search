@@ -4,11 +4,9 @@
     "web": {
       "bundler": "metro"
     },
-    "plugins": [
-      "expo-router"
-    ],
-    "name": "to-do",
-    "slug": "to-do",
+    "plugins": ["expo-router"],
+    "name": "job-search",
+    "slug": "job-search",
     "extra": {
       "router": {
         "origin": false
