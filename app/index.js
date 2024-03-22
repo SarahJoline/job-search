@@ -9,7 +9,7 @@ import {
   ScreenHeaderBtn,
   Welcome,
 } from "../components";
-import { COLORS, SIZES, icons, images } from "../constants";
+import { COLORS, SIZES, icons } from "../constants";
 
 const Home = () => {
   const router = useRouter();
@@ -22,9 +22,6 @@ const Home = () => {
           headerShadowVisible: false,
           headerLeft: () => (
             <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />
-          ),
-          headerRight: () => (
-            <ScreenHeaderBtn iconUrl={images.profile} dimension="100%" />
           ),
           headerTitle: "",
         }}
