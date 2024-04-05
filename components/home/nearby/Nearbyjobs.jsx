@@ -3,7 +3,7 @@ import React from "react";
 import { ActivityIndicator, Text, TouchableOpacity, View } from "react-native";
 
 import { COLORS } from "../../../constants";
-import useFetch from "../../../hook/useFetch";
+import useFetch from "../../../hooks/useFetch";
 import NearbyJobCard from "../../common/cards/nearby/NearbyJobCard";
 import styles from "./nearbyjobs.style";
 

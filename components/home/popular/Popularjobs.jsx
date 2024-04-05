@@ -9,7 +9,7 @@ import {
 } from "react-native";
 
 import { COLORS, SIZES } from "../../../constants";
-import useFetch from "../../../hook/useFetch";
+import useFetch from "../../../hooks/useFetch";
 import PopularJobCard from "../../common/cards/popular/PopularJobCard";
 import styles from "./popularjobs.style";
 

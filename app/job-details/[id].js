@@ -18,7 +18,7 @@ import {
   Specifics,
 } from "../../components";
 import { COLORS, SIZES, icons } from "../../constants";
-import useFetch from "../../hook/useFetch";
+import useFetch from "../../hooks/useFetch";
 
 const tabs = ["About", "Qualifications", "Responsibilities"];
 
