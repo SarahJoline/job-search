@@ -21,7 +21,18 @@ const Home = () => {
           headerStyle: { backgroundColor: COLORS.lightWhite },
           headerShadowVisible: false,
           headerLeft: () => (
-            <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />
+            <ScreenHeaderBtn
+              iconUrl={icons.bookmark}
+              dimension="60%"
+              handlePress={() => console.log("handle dropdown menu")}
+            />
+          ),
+          headerRight: () => (
+            <ScreenHeaderBtn
+              iconUrl={icons.logout}
+              dimension="60%"
+              handlePress={() => console.log("handle dropdown menu")}
+            />
           ),
           headerTitle: "",
         }}
