@@ -1,9 +1,11 @@
 import { Stack, useRouter } from "expo-router";
 import { useState } from "react";
-
 import { SafeAreaView, ScrollView, View } from "react-native";
 
+import AuthHelperMethods from "../utils/auth";
+
 import {
+  LoginModal,
   Nearbyjobs,
   Popularjobs,
   ScreenHeaderBtn,
@@ -13,7 +15,14 @@ import { COLORS, SIZES, icons } from "../constants";
 
 const Home = () => {
   const router = useRouter();
+  const [modalVisible, setModalVisible] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const loggedInStatus = AuthHelperMethods.loggedIn();
+
+  function logout() {
+    AuthHelperMethods.logout("id_token");
+    window.location.href = "/";
+  }
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
       <Stack.Screen
@@ -24,16 +33,28 @@ const Home = () => {
             <ScreenHeaderBtn
               iconUrl={icons.bookmark}
               dimension="60%"
-              handlePress={() => console.log("handle dropdown menu")}
+              handlePress={() => console.log("go to saved")}
             />
           ),
-          headerRight: () => (
-            <ScreenHeaderBtn
-              iconUrl={icons.logout}
-              dimension="60%"
-              handlePress={() => console.log("handle dropdown menu")}
-            />
-          ),
+          headerRight: () => {
+            if (loggedInStatus) {
+              return (
+                <ScreenHeaderBtn
+                  iconUrl={icons.logout}
+                  dimension="60%"
+                  handlePress={() => logout()}
+                />
+              );
+            } else {
+              return (
+                <ScreenHeaderBtn
+                  iconUrl={icons.login}
+                  dimension="60%"
+                  handlePress={() => setModalVisible(true)}
+                />
+              );
+            }
+          },
           headerTitle: "",
         }}
       />
@@ -44,6 +65,10 @@ const Home = () => {
             padding: SIZES.medium,
           }}
         >
+          <LoginModal
+            modalVisible={modalVisible}
+            setModalVisible={setModalVisible}
+          />
           <Welcome
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
