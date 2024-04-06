@@ -3,8 +3,8 @@ import { useState } from "react";
 import {
   ActivityIndicator,
   FlatList,
+  Pressable,
   Text,
-  TouchableOpacity,
   View,
 } from "react-native";
 
@@ -31,9 +31,9 @@ const Popularjobs = () => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Popular jobs</Text>
-        <TouchableOpacity>
+        <Pressable>
           <Text style={styles.headerBtn}>Show all</Text>
-        </TouchableOpacity>
+        </Pressable>
       </View>
 
       <View style={styles.cardsContainer}>

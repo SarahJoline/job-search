@@ -7,9 +7,9 @@ import {
   ActivityIndicator,
   FlatList,
   Image,
+  Pressable,
   SafeAreaView,
   Text,
-  TouchableOpacity,
   View,
 } from "react-native";
 
@@ -112,7 +112,7 @@ const JobSearch = () => {
         )}
         ListFooterComponent={() => (
           <View style={styles.footerContainer}>
-            <TouchableOpacity
+            <Pressable
               style={styles.paginationButton}
               onPress={() => handlePagination("left")}
             >
@@ -121,11 +121,11 @@ const JobSearch = () => {
                 style={styles.paginationImage}
                 resizeMode="contain"
               />
-            </TouchableOpacity>
+            </Pressable>
             <View style={styles.paginationTextBox}>
               <Text style={styles.paginationText}>{page}</Text>
             </View>
-            <TouchableOpacity
+            <Pressable
               style={styles.paginationButton}
               onPress={() => handlePagination("right")}
             >
@@ -134,7 +134,7 @@ const JobSearch = () => {
                 style={styles.paginationImage}
                 resizeMode="contain"
               />
-            </TouchableOpacity>
+            </Pressable>
           </View>
         )}
       />
