@@ -65,10 +65,6 @@ const Home = () => {
             padding: SIZES.medium,
           }}
         >
-          <LoginModal
-            modalVisible={modalVisible}
-            setModalVisible={setModalVisible}
-          />
           <Welcome
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
@@ -81,6 +77,10 @@ const Home = () => {
 
           <Popularjobs />
           <Nearbyjobs />
+          <LoginModal
+            modalVisible={modalVisible}
+            setModalVisible={setModalVisible}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
