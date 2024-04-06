@@ -25,6 +25,9 @@ const LoginModal = ({ modalVisible, setModalVisible}) => {
    
   >
       <View style={styles.modalCard}>
+      <Pressable  style={styles.closeBtn} onPress={() => setModalVisible(!modalVisible)}>
+          <Text>Hide Modal</Text>
+        </Pressable>
         <Text style={styles.loginHeaderText}>Log in</Text>
         <Text>Email:</Text>
         <TextInput onChangeText={setEmail} value={email}/>
@@ -33,9 +36,7 @@ const LoginModal = ({ modalVisible, setModalVisible}) => {
         <Pressable onPress={() => console.log("handle login")}>
           <Text>Log in</Text>
         </Pressable>
-        <Pressable onPress={() => setModalVisible(!modalVisible)}>
-          <Text>Hide Modal</Text>
-        </Pressable>
+      
       </View>
   </Modal>
 )}

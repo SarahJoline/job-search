@@ -1,12 +1,16 @@
 import { StyleSheet } from "react-native";
 
-import { COLORS, SIZES } from "../../../constants";
+import { SIZES } from "../../../constants";
 
 const styles = StyleSheet.create({
   modalCard: {
-    backgroundColor: COLORS.white,
+    padding: 30,
     justifyContent: "center",
     alignItems: "left",
+    gap: SIZES.small,
+  },
+  closeBtn: {
+    alignSelf: "flex-end",
   },
   loginHeaderText: {
     fontSize: SIZES.xLarge,
