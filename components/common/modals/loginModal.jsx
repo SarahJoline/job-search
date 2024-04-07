@@ -7,6 +7,10 @@ import {
   TextInput,
   View,
 } from "react-native";
+import { icons } from "../../../constants";
+
+import { ScreenHeaderBtn } from "../../../components";
+
 
 import styles from './loginmodal.style';
  
@@ -25,9 +29,9 @@ const LoginModal = ({ modalVisible, setModalVisible}) => {
    
   >
       <View style={styles.modalCard}>
-      <Pressable  style={styles.closeBtn} onPress={() => setModalVisible(!modalVisible)}>
-          <Text>Hide Modal</Text>
-        </Pressable>
+        <View style={styles.closeBtn}>
+        <ScreenHeaderBtn iconUrl={icons.close} handlePress={() => setModalVisible(!modalVisible)}/>
+        </View>
         <Text style={styles.loginHeaderText}>Log in</Text>
         <Text>Email:</Text>
         <TextInput onChangeText={setEmail} value={email}/>
@@ -35,6 +39,10 @@ const LoginModal = ({ modalVisible, setModalVisible}) => {
         <TextInput onChangeText={setPassword} value={password}/> 
         <Pressable onPress={() => console.log("handle login")}>
           <Text>Log in</Text>
+        </Pressable>
+        <Text>-- or --</Text>
+        <Pressable onPress={() => console.log("handle signup")}>
+          <Text>Sign up</Text>
         </Pressable>
       
       </View>

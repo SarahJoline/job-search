@@ -1,6 +1,7 @@
 import bookmark from "../assets/icons/bookmark.png";
 import chevronLeft from "../assets/icons/chevron-left.png";
 import chevronRight from "../assets/icons/chevron-right.png";
+import close from "../assets/icons/close.png";
 import filter from "../assets/icons/filter.png";
 import heartOutline from "../assets/icons/heart-ol.png";
 import heart from "../assets/icons/heart.png";
@@ -13,6 +14,7 @@ import share from "../assets/icons/share.png";
 
 export default {
   logout,
+  close,
   bookmark,
   heart,
   menu,
